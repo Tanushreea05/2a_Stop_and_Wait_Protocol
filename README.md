@@ -18,15 +18,15 @@ s.bind(('localhost',8000))
 s.listen(5)
 c,addr=s.accept()
 while True:
-i=input("Enter a data: ")
-c.send(i.encode())
-ack=c.recv(1024).decode()
-if ack:
-print(ack)
-continue
-else:
-c.close()
-break
+   i=input("Enter a data: ")
+   c.send(i.encode())
+   ack=c.recv(1024).decode()
+   if ack:
+     print(ack)
+     continue
+   else:
+     c.close()
+     break 
 ```
 ## SERVER
 ```
@@ -34,16 +34,18 @@ import socket
 s=socket.socket()
 s.connect(('localhost',8000))
 while True:
-print(s.recv(1024).decode())
-s.send("Acknowledgement Recived".encode())
+    print(s.recv(1024).decode())
+    s.send("Acknowledgement Recived".encode()) 
 ```
 ## OUTPUT
 
 ## CLIENT
-![CN CLIENT OP](https://github.com/user-attachments/assets/8ce32583-a656-402f-ae06-b16aa2603591)
+<img width="923" height="958" alt="image" src="https://github.com/user-attachments/assets/64e47805-edf1-46ee-8017-f8e4304f772d" />
+
 
 ## SERVER
-![CN SERVER OP](https://github.com/user-attachments/assets/684c4433-59cc-4d3d-a4d6-6303910078b0)
+
+<img width="877" height="948" alt="image" src="https://github.com/user-attachments/assets/863434ea-b62e-474a-b7a9-51494e1a1bc9" />
 
 
 ## RESULT
